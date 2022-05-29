@@ -78,3 +78,33 @@ int test2(void)
 	printf("%s\t%d\t%c\t%s\n", "남길동", 40, 'W', "동구");
 
 }
+int test3(void)
+{
+	printf("%d\n", 123);
+	printf("%5d\n", 123); // on right
+	printf("%-5d\n", 123); // on left
+	printf("%f\n", 123.456);
+	printf("%10.2f\n", 123.456); // dot is included in 10space
+}
+int exam7(void)
+{
+	printf("[%5d] [%05d] [%-5d]", 7, 7, 7);
+	// %05d -> fill '0' in blank
+}
+int exam8(void)
+{
+	printf("Hello, World\n"); printf("Hello, World\n"); printf("Hello, World\n");
+}
+// Control Code (escape char)
+// Escape character
+// \n: line change
+// \t: tab
+// \r: return to row start
+// \b: del before charater
+int exam9(void)
+{
+	printf("1234567\b0");
+}
+
+// Data Type 
+

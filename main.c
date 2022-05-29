@@ -11,7 +11,10 @@ int main(void)
 	//exam4();
 	//test1();
 	//exam5();
-	test2();
+	//test2();
+	//test3();
+	//exam7();
+	exam9();
 	return 0;
 
 }
