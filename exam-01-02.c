@@ -124,8 +124,8 @@ int exam10(void)
 
 	printf("%d\n", temperature1);
 	printf("%d\n", temperature2);
-	printf("%d\n", sizeof(temperature1));
-	printf("%d\n", sizeof(temperature2));
+	//printf("%d\n", sizeof(temperature1));
+	//printf("%d\n", sizeof(temperature2));
 }
 
 int exam11(void)
@@ -136,8 +136,8 @@ int exam11(void)
 	int age2;
 	age2 = 45;
 
-	printf("%d, %dByte\n", age, sizeof(age));
-	printf("%d, %dByte\n", age2, sizeof(age2));
+	//printf("%d, %dByte\n", age, sizeof(age));
+	//printf("%d, %dByte\n", age2, sizeof(age2));
 }
 /*
 // Constant : never change value
