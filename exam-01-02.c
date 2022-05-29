@@ -176,3 +176,12 @@ int exam13(void)
 	printf("%d\n", data);
 
 }
+int test4(void)
+{
+	char age = 22;
+	double height = 181;
+	double weight = 72;
+	printf("나의 나이는 %d 입니다.\n", age);
+	printf("나의 키는 %.lf 입니다.\n", height);
+	printf("나의 몸무게는 %.lf 입니다.\n", weight);
+}
