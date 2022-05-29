@@ -139,3 +139,40 @@ int exam11(void)
 	printf("%d, %dByte\n", age, sizeof(age));
 	printf("%d, %dByte\n", age2, sizeof(age2));
 }
+/*
+// Constant : never change value
+	1) Number Constant
+	 - integer Constant: -7, 0, 10, 0xA7
+	 - real Constant: -7.2, 3.14
+	2) Character Constant: 'a', 'A', '7', '='
+	3) String Constant: "Hello, World"
+*/
+
+int exam12(void)
+{
+	printf("%d", '7');
+}
+/*
+// Variable: Load space when we save data
+	hennsui
+	define mean assign storage space
+
+	// attention when define variable
+	english, number and underspace can be use
+	number can't be located first
+	can't include gap space
+	distinguish between small letter and upper letter
+	keyword can't be use
+*/
+int exam13(void)
+{
+	// int data;	// defined a 4byte Variable
+	//int data = 0;	// defined and reset to Integer 0
+	//int data2;
+	//data2 = 17;		// define variable 'data' = reset
+	int data = 7;
+	printf("%d\n", data);
+	data = 10;
+	printf("%d\n", data);
+
+}

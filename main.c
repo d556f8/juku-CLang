@@ -16,7 +16,9 @@ int main(void)
 	//exam7();
 	//exam9();
 	//exam10();
-	exam11();
+	//exam11();
+	//exam12();
+	exam13();
 	return 0;
 
 }
