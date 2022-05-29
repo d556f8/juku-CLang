@@ -42,7 +42,7 @@ int test1(void)
 	printf("주소 : 대구광역시\n");
 }
 int exam5(void)
-{	
+{
 	// 서식(format) : 서류를 꾸미는 일정한 '양식'
 	/*
 	%d : 10진 정수를 표시하는 서식문자
@@ -58,7 +58,7 @@ int exam5(void)
 	printf("\n");
 	printf("이름: %s\n", "이주현");
 	printf("나이: %d\n", 20);
-	printf("성별: %c\n",'M');
+	printf("성별: %c\n", 'M');
 	printf("신장: %.2f\n", 181.5);
 	printf("\n");
 	printf("이름: %s\n나이: %d\n성별: %c\n신장: %.2f\n", "이주현", 20, 'M', 181.5);
@@ -100,7 +100,7 @@ int exam8(void)
 // \n: line change
 // \t: tab
 // \r: return to row start
-// \b: del before charater
+// \b: cursor move to before charater
 int exam9(void)
 {
 	printf("1234567\b0");
