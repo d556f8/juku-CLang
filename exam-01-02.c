@@ -95,7 +95,7 @@ int exam8(void)
 {
 	printf("Hello, World\n"); printf("Hello, World\n"); printf("Hello, World\n");
 }
-// Control Code (escape char)
+// Manipulation Code (escape char)
 // Escape character
 // \n: line change
 // \t: tab
