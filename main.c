@@ -9,8 +9,11 @@ int main(void)
 	//exam2();
 	//exam3();
 	//exam4();
-	test1();
+	//test1();
+	//exam5();
+	test2();
 	return 0;
+
 }
 // Ctrl + Shift + B
 // Build Short-cut 
