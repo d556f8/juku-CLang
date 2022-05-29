@@ -107,4 +107,35 @@ int exam9(void)
 }
 
 // Data Type 
+/*
+char : Character (정수를 표현하는 자료형)
+signed char : 부호가 있는 1바이트 저장공간 (-128 ~ 127)
+unsigned char : 부호가 없는 1바이트 저장공간
+float : 실수를 저장하는 공간 4바이트 저장공간 거의 안쓴다 go to double
+double : 실수를 저장하는 공간 8바이트 저장공간 
+*/
+int exam10(void)
+{
+	signed char temperature1;
+	temperature1 = 127;
 
+	int temperature2;
+	temperature2 = 127;
+
+	printf("%d\n", temperature1);
+	printf("%d\n", temperature2);
+	printf("%d\n", sizeof(temperature1));
+	printf("%d\n", sizeof(temperature2));
+}
+
+int exam11(void)
+{
+	unsigned char age;
+	age = 45;
+
+	int age2;
+	age2 = 45;
+
+	printf("%d, %dByte\n", age, sizeof(age));
+	printf("%d, %dByte\n", age2, sizeof(age2));
+}
