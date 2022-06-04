@@ -185,3 +185,8 @@ int test4(void)
 	printf("나의 키는 %.lf 입니다.\n", height);
 	printf("나의 몸무게는 %.lf 입니다.\n", weight);
 }
+
+// #define prep(macro const)
+// macro = 자주사용한느 명령을 묶어서 하나의 명령으로 사용한다.
+// #define  DATA       7
+//         치완할 이름 치완될 내용
