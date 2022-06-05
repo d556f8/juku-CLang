@@ -190,3 +190,19 @@ int test4(void)
 // macro = 자주사용한느 명령을 묶어서 하나의 명령으로 사용한다.
 // #define  DATA       7
 //         치완할 이름 치완될 내용
+
+//int test5(void)
+//{
+//	char cNum1 = 1;
+//	char cNum2 = 1;
+//	scanf_s("%d", (int)&cNum1);
+//	scanf_s("%d", (int)&cNum2);
+//	printf("%d\n", cNum1 + cNum2);
+//
+//}
+
+int exam14(void)
+{
+	char arr[10] = { NULL };
+	
+}
