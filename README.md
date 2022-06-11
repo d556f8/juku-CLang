@@ -4,4 +4,4 @@ Study C Language Theory and Grammer in institute Academy
 
 when compile on VScode(GCC), it couldn't compile  
 ~~maybe header file not included IDK~~ I'm noob  
-Visual Studio Compiler's Features more powerful than GCC
+Visual Studio Compiler Features more powerful than GCC
