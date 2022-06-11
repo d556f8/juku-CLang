@@ -281,26 +281,7 @@
 //	printf("%d %% %d = %d\n", nData1, nData2, num1 % num2);
 //
 //	printf("%d\n", -nData1);
-#include <stdio.h>
-int main(void)
-{
-//	test01();
-//	test02();
-//	test03();
-//	test04();
-//	test05();
-//	test06();
-//	test07();
-//	test08();
-//	test09();
-//	test10();
-//	test11();
-//	test12();
-//	test13();
-//	test14();
-	test15();
-	return 0;
-}
+
 
 //// - 산술 연산자
 //int test01(void)
@@ -505,3 +486,71 @@ int test15(void)
 	
 	printf("%d", nData1 > nData2 ? nData1 : nData2);
 }
+
+// - 산술연자 %(나머지 연산자)
+int test16(void)
+{
+	int nData = 0;
+	printf("숫자를 입력하세요: ");
+	scanf_s("%d", &nData);
+	printf(nData % 2 == 0 ? "%d는 짝수" : "%d는 홀수", nData);
+
+}
+
+int test17(void)
+{
+	int nResult = 0;
+	int nData = 10;
+
+	nResult -= nData - 5;
+	printf("%d\n", nResult);
+
+}
+int test18(void)
+{
+	int x = 0;
+	int y = 0;
+	x = y = 10;
+	printf("%d, %d", x, y);
+
+}
+int test19(void)
+{
+	int nInput = 0;
+	int nHrs = 0;
+	int nMins = 0;
+	int nSecs = 0;
+	printf("입력 초: ");
+	scanf_s("%d", &nInput);
+	nHrs = nInput / 60 / 60;
+	nMins = nInput / 60 % 60;
+	nSecs = nInput % 60;
+	printf("%d초는 %02d시간 %02d분 %02d초 입니다.", nInput, nHrs, nMins, nSecs);
+}
+
+#include <stdio.h>
+int main(void)
+{
+	//	test01();
+	//	test02();
+	//	test03();
+	//	test04();
+	//	test05();
+	//	test06();
+	//	test07();
+	//	test08();
+	//	test09();
+	//	test10();
+	//	test11();
+	//	test12();
+	//	test13();
+	//	test14();
+	//	test15();
+	//	test16();
+	//	test17();
+	// test18();
+	test19();
+	return 0;
+}
+
+
