@@ -302,7 +302,7 @@ int test02(void)
 {
 	int x = 0;
 	int nInput = 0;
-	
+
 	printf("x = %d\n", x);
 
 	printf("Input?: ");
@@ -314,6 +314,7 @@ int test02(void)
 
 }
 
+// xor swap function 
 int test03(void)
 {
 	int x = 10;
@@ -408,7 +409,7 @@ int test10(void)
 	printf("%d >= %d: %d\n", a, b, a >= b);
 	printf("%d <= %d: %d\n", a, b, a <= b);
 	printf("%d != %d: %d\n", a, b, a != b);
-	
+
 }
 // - 논리 연산자
 // AND 연산자 ( && ) : 두 피연자 모두가 참이면 참을 반환.
@@ -455,13 +456,13 @@ int test13(void)
 
 	x++;
 	printf("%d\n", x);
-	
+
 	nResult = ++x;
 	printf("%d, %d\n", nResult, x);
 
 	nResult = x--;
 	printf("%d, %d\n", nResult, x);
-	
+
 }
 // - 삼항 연산자 잘안씀. 간혹가다 쓰니깐 알고는 있어야 함.
 
@@ -483,7 +484,7 @@ int test15(void)
 	int nData2 = 0;
 	printf("두 수를 입력: ");
 	scanf_s("%d%d", &nData1, &nData2);
-	
+
 	printf("%d", nData1 > nData2 ? nData1 : nData2);
 }
 
@@ -506,6 +507,7 @@ int test17(void)
 	printf("%d\n", nResult);
 
 }
+
 int test18(void)
 {
 	int x = 0;
@@ -514,6 +516,7 @@ int test18(void)
 	printf("%d, %d", x, y);
 
 }
+
 int test19(void)
 {
 	int nInput = 0;
@@ -528,28 +531,328 @@ int test19(void)
 	printf("%d초는 %02d시간 %02d분 %02d초 입니다.", nInput, nHrs, nMins, nSecs);
 }
 
+int test20(void)
+{
+	int nData1 = 0;
+	int nData2 = 0;
+	int nTotal = 0;
+
+	printf("정수 2개 입력 : ");
+	scanf_s("%d%d", &nData1, &nData2);
+
+	nTotal = nData1 + nData2;
+
+	printf(nTotal % 4 == 0 ? "%d는 %d의 배수입니다.\n" : "%d는 %d의 배수가 아닙니다.\n", nTotal, 4);
+}
+// 비트 연산자와 시프트 연산자
+// 비트 연산자
+// & : AND 연산자
+// | : OR 연산자
+// ^ : XOR 연산자
+// ~ : NOT 연산자
+
+// 시프트 연산자
+
+int test21(void)
+{
+	unsigned char cData = 10;
+	unsigned char cBitTest = 9;
+
+	printf("%d\n", cData & cBitTest);
+	printf("%d\n", cData | cBitTest);
+	printf("%d\n", cData ^ cBitTest);
+	printf("%d\n", ~cData);
+
+	printf("%d\n", cData << 1);
+	printf("%d\n", cData >> 1);
+	
+
+}
+
+int test22(void)
+{
+	int num1 = 15;
+	int num2 = 20;
+	int num3 = num1 << 2;
+	int num4 = num2 >> 3;
+
+	printf("<< 시프트 연산 결과: %d\n", num3);
+	printf(">> 시프트 연산 결과: %d\n", num4);
+}
+
+int test23(void)
+{
+	int nAge = 0;
+	printf("나이를 입력하세요: ");
+	scanf_s("%d", &nAge);
+	printf("당신의 나이는 %d세이며 , 요금은 %d원입니다.\n", nAge, nAge < 20 ? 800 : 1250);
+}
+
+int test24(void)
+{
+	int nAge = 0;
+	int nHeight = 0;
+	
+	printf("나이를 입력하세요: ");
+	scanf_s("%d", &nAge);
+	printf("키를 입력하세요: ");
+	scanf_s("%d", &nHeight);
+	printf(nAge >= 12 & nHeight >= 120 ? "놀이기구에 탑승하실 수 있습니다.\n" : "놀이기구에 탑승하실 수 없습니다.\n");
+
+}
+// 제어문
+// Change the Flow of the Program
+// if문 - 분기문(branching statement)이라고 한다.
+// 조건식을 근거로 구문들의 흐름을 변경한다.
+// 가장 기본적인 제어문, 사용빈도 굉장히 높음.
+
+int test25(void)
+{
+	int num = 0;
+
+	printf("정수 입력: ");
+	scanf_s("%d", &num);
+
+	if (num % 2 == 0) 
+	{
+		printf("입력한 수는 짝수입니다.\n");
+	}
+	printf("첫번째 if문 탈출\n");
+
+	if (num % 2 == 1) 
+	{
+		printf("입력한 수는 홀수입니다.\n");
+	}
+	printf("두번째 if문 탈출\n");
+}
+
+int test26(void)
+{
+	int nData = 5;
+	if (nData == 3) {
+		nData++;
+	}
+	printf("nData = %d\n", nData);
+}
+
+int test27(void)
+{
+	int num = 0;
+	scanf_s("%d", &num);
+	if (num < 3) 
+	{
+		printf("num is smaller than 3!\n");
+	}
+	if (num == 3) 
+	{
+		printf("num is 3!\n");
+	}
+	if (num > 3) 
+	{
+		printf("num is bigger than 3!\n");
+	}
+}
+
+int test28(void)
+{
+	int nData1= 0;
+	int nData2 = 0;
+	int nData3 = 0;
+
+	printf("첫번째 변수값: ");
+	scanf_s("%d", &nData1);
+	printf("두번째 변수값: ");
+	scanf_s("%d", &nData2);
+	printf("세번째 변수값: ");
+	scanf_s("%d", &nData3);
+
+	if (nData1 % 2 == 0)
+	{
+		printf("%d는 짝수\n", nData1);
+	}
+	if (nData2 % 2 == 0)
+	{
+		printf("%d는 짝수\n", nData2);
+	}
+	if (nData3 % 2 == 0)
+	{
+		printf("%d는 짝수\n", nData3);
+	}
+}
+
+int test29(void)
+{
+	int nInput = 0;
+	int nMax = 0;
+
+	printf("첫번째 변수값: ");
+	scanf_s("%d", &nInput);
+	nMax = nInput;
+
+	printf("두번째 변수값: ");
+	scanf_s("%d", &nInput);
+	if (nInput > nMax)
+	{
+		nMax = nInput;
+	}
+
+	printf("세번째 변수값: ");
+	scanf_s("%d", &nInput);
+	if (nInput > nMax)
+	{
+		nMax = nInput;
+	}
+
+	printf("MAX: %d", nMax);
+
+}
+
+int test30(void)
+{
+	char cData1 = 0;
+
+	printf("문자 입력: ");
+	scanf_s("%c", &cData1, sizeof(cData1));
+	
+	if ('A' <= cData1 && 'Z' >= cData1)
+	{
+		printf("알파벳 대문자 입력하셨습니다.\n");
+	}
+	if ('a' <= cData1 && 'z' >= cData1)
+	{
+		printf("알파벳 소문자 입력하셨습니다.\n");
+	}
+}
+//if-else
+// else는 if가 있어야 사용할 수 있다.
+
+int test31(void)
+{
+	char alpha = 'A';
+	if (alpha == 'B')
+	{
+		printf("alpha is B");
+	}
+	else
+	{
+		printf("alpha isn't B");
+	}
+}
+
+int test32(void)
+{
+	int nData = 10;
+	if (nData == 10)
+	{
+		nData = 0;
+	}
+	else
+	{
+		nData++;
+	}
+	printf("%d", nData);
+}
+
+int test33(void)
+{
+	int nInput = 0;
+	scanf_s("%d", &nInput);
+
+	if (nInput % 2 == 0) {
+		printf("짝수이면서 ");
+	}
+	else
+	{
+		printf("홀수이면서 ");
+	}
+
+	if (nInput % 3 == 0)
+	{
+		printf("3의 배수이다.\n");
+	}
+	else if (nInput % 5 == 0)
+	{
+		printf("5의 배수이다.\n");
+	}
+}
+
+int test34(void)
+{
+	char cInput = 0;
+	scanf_s("%c", &cInput, sizeof(cInput));
+	
+	if (cInput >= 'A' && cInput <= 'Z')
+	{
+		cInput = cInput + 1;
+		if (cInput > 'Z')
+		{
+			cInput = 'A';
+		}
+	}
+	if (cInput >= 'a' && cInput <= 'z')
+	{
+		cInput = cInput + 1;
+		if (cInput > 'z')
+		{
+			cInput = 'a';
+		}
+	}
+	printf("%c", cInput);
+}
+int test35(void)
+{
+	char cInput = 0;
+	scanf_s("%c", &cInput, sizeof(cInput));
+	cInput = cInput + 1;
+
+	if (cInput == 'z' + 1)
+	{
+		cInput = 'a';
+	}
+	if (cInput == 'Z' + 1)
+	{
+		cInput = 'A';
+	}
+
+	printf("%c", cInput);
+}
+int test36(void)
+{
+	char cInput = 0;
+	scanf_s("%c", &cInput, sizeof(cInput));
+	cInput = cInput + 1;
+
+	if (cInput == 'z' + 1 | cInput == 'Z' + 1)
+	{
+		cInput = cInput - 26;
+	}
+
+	printf("%c", cInput);
+}
+
 #include <stdio.h>
+#define TRUE 1
+#define FALSE 0
 int main(void)
 {
-	//	test01();
-	//	test02();
-	//	test03();
-	//	test04();
-	//	test05();
-	//	test06();
-	//	test07();
-	//	test08();
-	//	test09();
-	//	test10();
-	//	test11();
-	//	test12();
-	//	test13();
-	//	test14();
-	//	test15();
-	//	test16();
-	//	test17();
-	// test18();
-	test19();
+	//  test19();
+	//	test20();
+	//	test21();
+	//	test22();
+	//	test23();
+	//	test24();
+	//  test25();
+	//  test26();
+	//  test27();
+	//  test28();
+	//  test29();
+	//  test30();
+	//	test31();
+	//  test32();
+	//	test33();
+	//	test34();
+	//	test35();
+	test36();
 	return 0;
 }
 
