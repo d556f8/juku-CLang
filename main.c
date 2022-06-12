@@ -835,20 +835,20 @@ int test36(void)
 #define FALSE 0
 int main(void)
 {
-	//  test19();
+	//	test19();
 	//	test20();
 	//	test21();
 	//	test22();
 	//	test23();
 	//	test24();
-	//  test25();
-	//  test26();
-	//  test27();
-	//  test28();
-	//  test29();
-	//  test30();
+	//	test25();
+	//	test26();
+	//	test27();
+	//	test28();
+	//	test29();
+	//	test30();
 	//	test31();
-	//  test32();
+	//	test32();
 	//	test33();
 	//	test34();
 	//	test35();
