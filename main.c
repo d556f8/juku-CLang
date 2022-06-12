@@ -999,6 +999,141 @@ int test44(void)
 
 	printf("total: %d", total);
 }
+
+int test45(void)
+{
+	int num = 0;
+	while (1)
+	{
+		printf("반복중.. 숫자를 입력해주세요: ");
+		scanf_s("%d", &num);
+		printf("%d을(를) 입력하셨네요.\n", num);
+
+		if (num == -1)
+		{
+			break;
+		}
+	}
+	return 0;
+}
+
+int test46(void)
+{
+	int i = 1;
+	while (1)
+	{
+		if (i > 10)
+		{
+			break;
+		}
+		if (i % 3 == 0)
+		{
+			printf("Hello, World! 현재 값은: %d\n", i);	
+		}
+		i++;
+	}
+}
+
+int test47(void)
+{
+	int i = 1;
+
+	while (1)
+	{
+		if (i > 100)
+		{
+			break;
+		}
+
+		if (i % 3 == 0 && i % 4 == 0)
+		{
+			printf("공배수 %i\n", i);
+		}
+
+		i++;
+	}
+}
+
+int test48(void)
+{
+	int i = 2;
+	int j = 1;
+	while (1)
+	{	
+		if (j > 9)
+		{
+			break;
+		}
+		printf("%d x %d = %d\n", i, j, i*j);
+		j++;
+	}
+}
+int test49(void)
+{
+	int i = 2;
+	int j = 9;
+	while (1)
+	{
+		if (j < 1)
+		{
+			break;
+		}
+		printf("%d x %d = %d\n", i, j, i * j);
+		j--;
+	}
+}
+// 정수 뒤집어서 출력하기.
+int test50(void)
+{
+	int input = 0;
+	printf("정수 입력: ");
+	scanf_s("%d", &input);
+	
+	while (1)
+	{
+		if (input == 0)
+		{
+			break;
+		}
+ 		printf("%d", input % 10);
+		input = input / 10;
+	}
+
+}
+
+int test51(void)
+{
+	int i = 1;
+	while (1)
+	{
+		if (i > 10) {
+			break;
+		}
+		if (i % 3 == 0) {
+			i++;
+			continue;
+		}
+		printf("%d\n", i);
+		i++;
+	}
+
+}
+// for
+int test52(void)
+{
+	int i = 1;
+
+	for (int i = 1; i <= 10; i++)
+	{
+		printf("%d\n", i);
+	}
+
+	while (i <= 10)
+	{
+		printf("%d\n", i);
+		i++;
+	}
+}
 #include <stdio.h>
 #define TRUE 1
 #define FALSE 0
@@ -1013,7 +1148,15 @@ int main(void)
 	//	test41();
 	//	test42();
 	//	test43();
-	test44();
+	//	test44();
+	//	test45();
+	//	test46();
+	//	test47();
+	//	test48();
+	//	test49();
+	//	test50();
+	//	test51();
+	test52();
 	return 0;
 }
 
