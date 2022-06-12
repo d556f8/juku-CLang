@@ -597,7 +597,7 @@ int test24(void)
 	scanf_s("%d", &nAge);
 	printf("키를 입력하세요: ");
 	scanf_s("%d", &nHeight);
-	printf(nAge >= 12 & nHeight >= 120 ? "놀이기구에 탑승하실 수 있습니다.\n" : "놀이기구에 탑승하실 수 없습니다.\n");
+	printf(nAge >= 12 && nHeight >= 120 ? "놀이기구에 탑승하실 수 있습니다.\n" : "놀이기구에 탑승하실 수 없습니다.\n");
 
 }
 // 제어문
@@ -949,7 +949,56 @@ int test41(void)
 		}
 	}
 }
+int test42(void)
+{
+	// i = interation 반복한다, index
+	int i = 1;
+	int nTotal = 0;
+	while (i <= 10)
+	{
+		printf("현재 i의 값: %d\n", i);
+		nTotal = nTotal + i;
+		i++;
+	}
+	printf("nTotal의 값: %d", nTotal);
+}
+int test43(void)
+{
+	int nInput = 0;
+	printf("반복 수 입력: ");
+	scanf_s("%d", &nInput);
 
+	while (nInput > 0)
+	{
+		printf("*");
+		nInput--;
+	}
+}
+int test44(void)
+{
+	int n = 0;
+	int m = 0;
+	int total = 0;
+	
+	printf("n: ");
+	scanf_s("%d", &n);
+	printf("m: ");
+	scanf_s("%d", &m);
+
+	if (n > m)
+	{
+		n = n ^ m;
+		m = n ^ m;
+		n = n ^ m;
+	}
+	while (n <= m)
+	{
+		total = total + n;
+		n++;
+	}
+
+	printf("total: %d", total);
+}
 #include <stdio.h>
 #define TRUE 1
 #define FALSE 0
@@ -961,7 +1010,10 @@ int main(void)
 	//	test38();
 	//	test39();
 	//	test40();
-	test41();
+	//	test41();
+	//	test42();
+	//	test43();
+	test44();
 	return 0;
 }
 
