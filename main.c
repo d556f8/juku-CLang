@@ -820,14 +820,115 @@ int test36(void)
 {
 	char cInput = 0;
 	scanf_s("%c", &cInput, sizeof(cInput));
-	cInput = cInput + 1;
-
-	if (cInput == 'z' + 1 | cInput == 'Z' + 1)
+	if (cInput >= 'a' && cInput <= 'z' || cInput >= 'A' && cInput <= 'Z')
 	{
-		cInput = cInput - 26;
+		if (cInput == 'z' || cInput == 'Z')
+		{
+			cInput = cInput - 25;
+		}
+		else {
+			cInput = cInput + 1;
+		}
+	}
+	else
+	{
+		return 1;
+	}
+	printf("%c\n", cInput);
+}
+// goto (don't use it)
+// goto문은 break문처럼 특정 위치로 프로그램의 흐름을 '즉시'변경한다.
+// break문은 사용할 수 있는 곳이 문법적으로 제한적이다.(switch, 반복문)
+// 하지만 goto문은 사용자가 Lable만 명시하면 어느위치든 이동 가능하다
+// 즉, 아무 제한없이 코드의 흐름을 변경할 수 있다.
+
+int test37(void)
+{
+	const int PRICE = 5000;
+	int nInput = 0;
+	int total = 0;
+
+	printf("n개 입력: ");
+	scanf_s("%d", &nInput);
+	
+	total = PRICE * nInput;
+
+	if (nInput >= 100)
+	{
+		total = total * 0.8;
+	}
+	else if (nInput >= 10)
+	{
+		total = total * 0.9;
+	}
+	printf("%d원 입니다.", total);
+}
+
+int test38(void)
+{
+	int nInput = 0;
+
+	printf("월 입력: ");
+	scanf_s("%d", &nInput);
+
+	switch (nInput)
+	{
+	case 12:
+	case 1:
+	case 2:
+		printf("겨울");
+		break;
+
+	case 3:
+	case 4:
+	case 5:
+		printf("봄");
+		break;
+
+	case 6:
+	case 7:
+	case 8:
+		printf("여름");
+		break;
+
+	case 9:
+	case 10:
+	case 11:
+		printf("가을");
+		break;
+
+	default:
+		printf("ERROR");
+		break;
+	}
+	printf("입니다.\n");
+}
+int test39(void)
+{
+	printf("Hello, World\n");
+	printf("Hello, World\n");
+	printf("Hello, World\n");
+	printf("Hello, World\n");
+	printf("Hello, World\n");
+	printf("Hello, World\n");
+	printf("Hello, World\n");
+	printf("Hello, World\n");
+	printf("Hello, World\n");
+	printf("Hello, World\n");
+}
+// 반복문 요소
+// 1) 조건문, 조건을 만족하면 반목문 실행
+// 2) 초기값
+// 3) 증감식 
+int test40(void)
+{
+	int num = 0;
+	while (num < 3)
+	{
+		printf("num is %d\n", num);
+		num++;
 	}
 
-	printf("%c", cInput);
 }
 
 #include <stdio.h>
@@ -835,24 +936,12 @@ int test36(void)
 #define FALSE 0
 int main(void)
 {
-	//	test19();
-	//	test20();
-	//	test21();
-	//	test22();
-	//	test23();
-	//	test24();
-	//	test25();
-	//	test26();
-	//	test27();
-	//	test28();
-	//	test29();
-	//	test30();
-	//	test31();
-	//	test32();
-	//	test33();
-	//	test34();
 	//	test35();
-	test36();
+	//	test36();
+	//	test37();
+	//	test38();
+	//	test39();
+	test40();
 	return 0;
 }
 
