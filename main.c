@@ -931,6 +931,25 @@ int test40(void)
 
 }
 
+int test41(void)
+{
+	int num = 0;
+	while (num != -1)
+	{
+		printf("숫자를 입력하세요. ('-1' 종료): ");
+		scanf_s("%d", &num);
+
+		if (num == -1) 
+		{
+			printf("종료합니다.");
+		}
+		else
+		{
+			printf("%을(를) 입력하셨네요.\n", num);
+		}
+	}
+}
+
 #include <stdio.h>
 #define TRUE 1
 #define FALSE 0
@@ -941,7 +960,8 @@ int main(void)
 	//	test37();
 	//	test38();
 	//	test39();
-	test40();
+	//	test40();
+	test41();
 	return 0;
 }
 
