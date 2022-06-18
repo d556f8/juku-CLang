@@ -1134,6 +1134,228 @@ int test52(void)
 		i++;
 	}
 }
+
+int test53(void)
+{
+	int nInput = 0;
+	int total = 0;
+
+	printf("정수 n: ");
+	scanf_s("%d", &nInput);
+
+
+	for (int i = 1; i <= nInput; i++)
+	{
+		total = total + i;
+	}
+	printf("합: %d", total);
+
+}
+
+int test54(void)
+{
+	int nInput = 0;
+	int total = 0;
+
+	printf("정수 n: ");
+	scanf_s("%d", &nInput);
+
+
+	for (int i = 1; i <= nInput; i++)
+	{
+		if (i % 4 == 0)
+		{
+			continue;
+		}
+		total = total + i;
+	}
+	printf("합: %d", total);
+
+}
+
+int test55(void)
+{
+	for (int i = 2; i <= 9; i++)
+	{
+		for (int j = 1; j <= 9; j++)
+		{
+			printf("%d x %d = %d\n", i, j, i * j);
+		}
+	}
+}
+
+int test56(void)
+{
+	int nInput = 0;
+
+	printf("단수 입력: ");
+	scanf_s("%d", &nInput);
+
+	for (int i = nInput; i < nInput+5; i++)
+	{
+		for (int j = 1; j <= 9; j++)
+		{
+			printf("%d x %d = %d\n", i, j, i * j);
+		}
+	}
+}
+
+int test57(void)
+{
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = 0; j <= i; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+int test58(void)
+{
+	for (int i = 0; i < 5; i++)
+	{
+		for (int o = 0; o < i; o++)
+		{
+			printf(" ");
+		}
+		for (int j = 0; j < 5-i; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+
+int test59(void)
+{
+	for (int i = 0; i < 5; i++)
+	{
+		for (int o = 0; o < 5 - i; o++)
+		{
+			printf(" ");
+		}
+		for (int j = 0; j < i * 2 + 1; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+void asterisk(int input)
+{
+	for (int i = 0; i < input; i++)
+	{
+		printf("*");
+	}
+}
+
+void isDataMax(int data1, int data2)
+{
+	
+	if (data1 > data2)
+	{
+		printf("%d이(가) %d 보다 큽니다.", data1, data2);
+	}
+	else if (data2 > data1)
+	{
+		printf("%d이(가) %d 보다 큽니다.", data2, data1);
+	}
+	else
+	{
+		printf("똑같은 값입니다.");
+	}
+}
+void isDataMax2(int data1, int data2)
+{
+	int max = 0;
+	if (data1 == data2)
+	{
+		printf("똑같은 값입니다.");
+		return;
+	}
+	data1 > data2 ? (max = data1) : (max = data2);
+	printf("두 수중 큰 값은: %d", max);
+}
+int test60(void)
+{
+	int nData1 = 0;
+	int nData2 = 0;
+
+	printf("두 개의 정수를 입력하세요: ");
+	scanf_s("%d%d", &nData1, &nData2);
+	isDataMax(nData1, nData2);
+}
+
+int Sum(int data1, int data2)
+{
+	return data1 + data2;
+}
+int test61(void)
+{	
+	int nInput1 = 0;
+	int nInput2 = 0;
+	int total = 0;
+	printf("두 수를 입력: ");
+	scanf_s("%d%d", &nInput1, &nInput2);
+	total = Sum(nInput1, nInput2);
+
+	printf("%d", total);
+}
+
+/*
+int aaaaa(void){}
+void bbbbb(){}
+void ccccc(int temp){}
+difference
+*/
+
+
+// function, method 
+// return include in function scope
+// if function type == void? it doesn't need return value
+void TotalSum(int n)
+{
+	int total = 0;
+	for (int i = 1; i <= n; i++)
+	{
+		total = total + i;
+	}
+	printf("1부터 %d까지의 합: %d", n, total);
+}
+
+int test62(void)
+{
+	int nData = 0;
+	printf("n: ");
+	scanf_s("%d", &nData);
+
+	TotalSum(nData);
+	 
+}
+
+// 지역변수, 전역변수, static, extern
+
+// 메모리의 구조
+// Code 영역: 컴파일 된 코드 저장 영역
+// Stack 영역: 함수 내에 생성된 공간 저장 영역 (지역변수)
+// Heap 영역: 동적메모리 할당 영역
+// Data 영역: 공유데이터 저장 영역 (전역변수, static)
+
+// 지역변수
+// 함수 내에서 생성/소멸되는 변수
+// 함수가 호출될 때 메모리에 저장 공간이 만들어 졌다가 함수 호출이 끝나면 함께 사라짐
+// 즉, 함수와 같은 수명을 가진다.
+void ReturnNum()
+{
+	int num = 7; // 지역변수 - ReturnNum()에서 생성된 함수, 함수가 끝나면 이 변수는 소멸된다.
+	return num; // num의 value를 반환.
+}
+int test63(void)
+{
+	ReturnNum(); // Just 7 - Int
+}
+
 #include <stdio.h>
 #define TRUE 1
 #define FALSE 0
@@ -1156,7 +1378,17 @@ int main(void)
 	//	test49();
 	//	test50();
 	//	test51();
-	test52();
+	//	test52();
+	//	test53();
+	//	test54();
+	//	test55();
+	//	test56();
+	//	test57();
+	//	test58();
+	//	test59();
+	//	test60();
+	//	test61();
+	test62();
 	return 0;
 }
 
