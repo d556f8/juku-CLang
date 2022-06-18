@@ -1242,13 +1242,13 @@ int test59(void)
 		printf("\n");
 	}
 }
-void asterisk(int input)
-{
-	for (int i = 0; i < input; i++)
-	{
-		printf("*");
-	}
-}
+//void asterisk(int input)
+//{
+//	for (int i = 0; i < input; i++)
+//	{
+//		printf("*");
+//	}
+//}
 
 void isDataMax(int data1, int data2)
 {
@@ -1338,7 +1338,7 @@ int test62(void)
 
 // 메모리의 구조
 // Code 영역: 컴파일 된 코드 저장 영역
-// Stack 영역: 함수 내에 생성된 공간 저장 영역 (지역변수)
+// Stack 영역: 함수 내에 생성된 공간 저장 영역 (지역변수) 함수들의 시뮬레이션 공간
 // Heap 영역: 동적메모리 할당 영역
 // Data 영역: 공유데이터 저장 영역 (전역변수, static)
 
@@ -1346,6 +1346,14 @@ int test62(void)
 // 함수 내에서 생성/소멸되는 변수
 // 함수가 호출될 때 메모리에 저장 공간이 만들어 졌다가 함수 호출이 끝나면 함께 사라짐
 // 즉, 함수와 같은 수명을 가진다.
+// return으로 빠지게 안하거나 전역변수에 대입하지 않는다면 값을 가져올 수 없다.
+// 전역보다 지역변수가 우선순위가 더 높다.
+ 
+// 전역변수
+// 정의할때 g_변수명으로 입력한다.
+// 전역변수를 사용할 때 주의점 1
+// 재사용시에 굉장히 불편하다.
+
 void ReturnNum()
 {
 	int num = 7; // 지역변수 - ReturnNum()에서 생성된 함수, 함수가 끝나면 이 변수는 소멸된다.
@@ -1353,43 +1361,54 @@ void ReturnNum()
 }
 int test63(void)
 {
-	ReturnNum(); // Just 7 - Int
+	ReturnNum(); // Just 7 - Int 
+
 }
 
+// 재귀 함수
+// A함수 호출 - A함수 호출
+
+void SayHello()
+{
+	printf("Hello.\n");
+	SayHello();
+}
+int test64(void)
+{
+	SayHello();
+}
+
+int Factorial(int n)
+{
+	if (n <= 0) {
+		return;
+	}
+	return n * Factorial(n - 1);
+}
+int test65(void)
+{
+	int nData = 0;
+
+	printf("nData: ");
+	scanf_s("%d", &nData);
+	
+	printf("%d! = %d\n", nData, Factorial(nData));
+}
 #include <stdio.h>
 #define TRUE 1
 #define FALSE 0
 int main(void)
 {
-	//	test35();
-	//	test36();
-	//	test37();
-	//	test38();
-	//	test39();
-	//	test40();
-	//	test41();
-	//	test42();
-	//	test43();
-	//	test44();
-	//	test45();
-	//	test46();
-	//	test47();
-	//	test48();
-	//	test49();
-	//	test50();
-	//	test51();
-	//	test52();
-	//	test53();
-	//	test54();
-	//	test55();
-	//	test56();
-	//	test57();
-	//	test58();
-	//	test59();
 	//	test60();
 	//	test61();
-	test62();
+	//	test63();
+	//	test64();
+	test65();
 	return 0;
 }
+
+// static 정적인
+// 해당 소스코드에서만 define한다.
+// extern으로 불러올 수 없는
 
 
