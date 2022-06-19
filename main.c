@@ -1380,8 +1380,8 @@ int test64(void)
 
 int Factorial(int n)
 {
-	if (n <= 0) {
-		return;
+	if (n == 1) {
+		return 1;
 	}
 	return n * Factorial(n - 1);
 }
@@ -1394,6 +1394,149 @@ int test65(void)
 	
 	printf("%d! = %d\n", nData, Factorial(nData));
 }
+//int Recursive(int n)
+//{
+//	if (n == 1)
+//	{
+//		return 1;
+//	}
+//	return n + Recursive(n - 1);
+//}
+//int test66(void)
+//{
+//	int nTotal = Recursive(10);
+//	printf("1~10까지의 합: %d\n", nTotal);
+//	return 0;
+//}
+int Recursive(int n)
+{
+	if (n == 0)
+	{
+		return 0;
+	}
+	if (n % 2 == 0)
+	{
+		return n + Recursive(n - 1);
+	}
+	return Recursive(n - 1);
+}
+int test66(void)
+{
+	int nTotal = Recursive(10);
+	printf("1~10까지의 합: %d\n", nTotal);
+	return 0;
+}
+
+//int nData;
+//int ReAsterisk(int n)
+//{
+//	if (n == 0)
+//	{
+//		return;
+//	}
+//	for (int i = 0; i <= nData-n; i++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//	return ReAsterisk(n - 1);
+//}
+//int test67(void)
+//{
+//	nData = 5;
+//	ReAsterisk(nData);
+//}
+int nData;
+int ReAsterisk(int n)
+{
+	if (n == 0)
+	{
+		return;
+	}
+	for (int i = 0; i < n; i++)
+	{
+		printf(" ");
+	}
+	for (int i = 0; i <= nData - n; i++)
+	{
+		printf("*");
+	}
+	printf("\n");
+	return ReAsterisk(n - 1);
+}
+int test68(void)
+{
+	nData = 20;
+	ReAsterisk(nData);
+}
+
+int test69(void)
+{
+	// index는 선언시에는 상수로만 정의한다.
+	// select 상태에서는 상관이 없다.
+	int student[30]; // 4byte * 30 = 120 byte
+	int count = 1;
+	
+//	printf("size of count = %d\n", sizeof(count));
+//	printf("size of student Array = %d\n", sizeof(student));
+//
+//	student[count] = 10;
+//	
+//	printf("student[count] = %d\n", student[count]);
+
+//	for (int i = 0; i < 30; i++)
+//	{
+//		student[i] = 7;
+//		printf("student[%d] = %d\n", i, student[i]);
+//	}
+	
+}
+//int test70(void)
+//{
+//	int student[5] = { 0,1,2,3,4 };
+//	for (int i = 0; i < 5; i++)
+//	{
+//		printf("student[%d] = %d\n", i, student[i]);
+//	}
+//}
+//int test71(void)
+//{
+//	int student[100] = { 0, }; // 정의를 내린 값만 입력이 된다. 입력하지 않은 각 배열요소들은 0으로 초기화가 된다.
+//	for (int i = 0; i < 5; i++)
+//	{
+//		printf("student[%d] = %d\n", i, student[i]);
+//	}
+//}
+//// 배열 초기화 시 크기는 생략이 가능하다.
+//int test72(void)
+//{
+//	int student[] = { 1, 2, 3, 4, 5 };
+//	for (int i = 0; i < 5; i++)
+//	{
+//		printf("student[%d] = %d\n", i, student[i]);
+//	}
+//	printf("size of student[] = %d", sizeof(student));  // 4byte * 5 = 20
+//}
+//int test73(void)
+//{
+//	int nData[5] = { 0, };
+//	nData[0] = 2;
+//	for (int i = 0; i < 5; i++)
+//	{
+//		printf("nData[%d] = %d\n", i, nData[i]);
+//	}
+//}
+int test74(void)
+{
+	int nData[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	int nTotal = 0;
+	for (int i = 0; i < 10; i++)
+	{
+		nTotal = nTotal + nData[i];
+	}
+	printf("nData배열의 총합은: %d\n", nTotal);
+
+}
 #include <stdio.h>
 #define TRUE 1
 #define FALSE 0
@@ -1403,7 +1546,15 @@ int main(void)
 	//	test61();
 	//	test63();
 	//	test64();
-	test65();
+	//	test65();
+	//	test66();
+	//	test67();
+	//	test68();
+	//	test69();
+	//	test70();
+	//	test71();
+	//	test72();
+	test74();
 	return 0;
 }
 
