@@ -1623,7 +1623,7 @@ int GetStringLength(char data[])
 {
 	int length = 0;
 	for (int i = 0; i < sizeof(data); i++) {
-		if (data[i] == '\0')
+		if (data[i] == 0)
 		{
 			break;
 		}
@@ -1668,7 +1668,48 @@ int test84(void)
 	}
 
 }
+int test85(void)
+{
+	int nData[3][4] = {
+		{10, 20, 30},
+		{40, 50, 60}
+	};
+	int i = 0, j = 0;
 
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 4; j++)
+		{
+			printf("%d\t", nData[i][j]);
+		}
+		printf("\n");
+	}
+}
+int test86(void)
+{
+	char word[100] = { 0, };
+	char cMax;
+	char cMin;
+	int word_length = GetStringLength(word);
+	scanf_s("%s", word, sizeof(word));
+	
+	cMax = word[0];
+	cMin = word[0];
+
+	for (int i = 0; i < 3; i++)
+	{
+		if (word[i] > cMax) 
+		{ 
+			cMax = word[i];
+		}
+		if (word[i] < cMin)
+		{ 
+			cMin = word[i];
+		}
+	}
+	printf("아스키코드 큰 값: %c", cMax);
+	printf("아스키코드 작은 값: %c", cMin);
+}
 #include <stdio.h>
 #define TRUE 1
 #define FALSE 0
@@ -1696,7 +1737,9 @@ int main(void)
 	//	test82();
 	//	test83();
 	//	Situmon();
-	test84();
+	//	test84();
+	//	test85();
+	test86();
 	return 0;
 }
 
