@@ -1537,6 +1537,138 @@ int test74(void)
 	printf("nData배열의 총합은: %d\n", nTotal);
 
 }
+int test75(void)
+{
+	int nData[5] = { 0, };
+	for (int i = 0; i < 5; i++)
+	{
+		printf("%d번째 값을 입력하세요 : ", i);
+		scanf_s("%d", &nData[i]);
+
+	}
+	for (int i = 0; i < 5; i++)
+	{
+		printf("nData[%d] = %d\n", i, nData[i]);
+	}
+}
+int test76(void)
+{
+//	char nData[5] = { 'h','a','p','p','y' };
+	char nData[] = "happy";
+	//	char nData[5] = "happy"; 이건 %s로 출력할려고 했을 때 에러가 발생하니 이렇게 정의 하지 않는다.
+	// '\0' 문자열의 끝에 자동삽입. 
+	// 문자열이 끝나는 걸 인식하는 기호
+
+	printf("nData size = %d\n", sizeof(nData));
+
+	for (int i = 0; i < 5; i++)
+	{
+		printf("nData[%d] = %c\n", i, nData[i]);
+	}
+}
+
+int test77(void)
+{
+	char nData[10] = "HelloWorld";
+	for (int i = 0; i < 10; i++)
+	{
+		printf("nData[%d] = %c\n", i, nData[i]);
+	}
+	printf("\n");
+	printf("%s\n", nData);
+	
+}
+int test78(void)
+{
+	char nData[] = "HelloWorld";
+	int i = 0;
+
+	while (nData[i] != '\0')
+	{
+		printf("%c", nData[i]);
+		i++;
+	}
+}
+
+int test79(void)
+{
+	char nData[100];
+	printf("문자열을 입력해주세요 : ");
+	scanf_s("%s", nData, sizeof(nData));
+	printf("%s", nData);
+}
+
+int test80(void)
+{
+	char nData[50] = "I love C Language";
+	
+	nData[8] = '\0';
+	printf("nData = %s", nData);
+}
+
+int test81(void)
+{
+//	printf("NULL : %d\n", NULL); 아무것도 가리키고 있지 않다.
+}
+
+int test82(void)
+{
+	char sData[] = "happy";
+	printf("sData: %s\n", sData);
+	printf("sData 의 size: %d\n", sizeof(sData));
+	printf("sData 의 length: %d\n", sizeof(sData) / sizeof(char));
+}
+
+int GetStringLength(char data[])
+{
+	int length = 0;
+	for (int i = 0; i < sizeof(data); i++) {
+		if (data[i] == '\0')
+		{
+			break;
+		}
+		length = length + 1;
+	}
+	return length;
+}
+int test83(void)
+{
+	char sData[] = "apple";
+	int data_length = 0;
+
+	data_length = GetStringLength(sData);
+
+	printf("sData 의 size: %d\n", sizeof(sData)-1);
+	printf("sData 의 length: %d\n", data_length);
+}
+
+int GetStringL(int data[])
+{
+	printf("GetStringL 메소드내 sizeof(data) = %d\n", sizeof(data));
+}
+int Situmon(void)
+{
+	char sData[] = "apple";
+	printf("situmon 함수내 sizeof(sData) = %d\n", sizeof(sData));
+	GetStringL(sData);
+}
+
+int test84(void)
+{
+	int nData[2][3] = { 1, 2, 3, 
+						4, 5, 6 };
+	//	int nData[3] = { 1, 2, 3 };
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			printf("%d\t", nData[i][j]);
+		}
+		printf("\n");
+	}
+
+}
+
 #include <stdio.h>
 #define TRUE 1
 #define FALSE 0
@@ -1554,11 +1686,22 @@ int main(void)
 	//	test70();
 	//	test71();
 	//	test72();
-	test74();
+	//	test74();
+	//	test75();
+	//	test76();
+	//	test77();
+	//	test78();
+	//	test79();
+	//	test80();
+	//	test82();
+	//	test83();
+	//	Situmon();
+	test84();
 	return 0;
 }
 
 // static 정적인
+
 // 해당 소스코드에서만 define한다.
 // extern으로 불러올 수 없는
 
